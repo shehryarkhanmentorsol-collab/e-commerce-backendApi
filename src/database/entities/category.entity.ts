@@ -13,8 +13,8 @@ export class Category{
     @Column({unique: true})
     slug: string;
 
-    @ManyToOne(()=> Category, category => category.children, {nullable: true})
-    parent: Category;
+    @ManyToOne(()=> Category, category => category.children, {nullable: true,onDelete: 'SET NULL'})
+    parent: Category | null;
 
     @OneToMany(()=> Category, category => category.parent)
     children: Category[];

@@ -21,6 +21,12 @@ export class Product{
     @Column()
     stockQuantity: number
 
+    @Column({ type: 'float', default: 0 })
+    averageRating: number;
+
+    @Column({ type: 'int', default: 0 })
+    reviewCount: number;
+
     @Column({type: 'enum', enum: ProductStatus})
     status: ProductStatus
 

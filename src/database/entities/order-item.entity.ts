@@ -11,12 +11,12 @@ export class OrderItem {
   @ManyToOne(() => Order, order => order.items)
   order: Order;
 
-  @ManyToOne(() => Product, product => product.orderItem)
+@ManyToOne(() => Product)
   product: Product;
 
   @Column()
   quantity: number;
 
-  @Column('decimal')
-  priceAtPurchase: number;
+ @Column({ type: 'decimal' })
+  price: number;
 }

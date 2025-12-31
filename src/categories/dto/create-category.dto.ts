@@ -1,4 +1,4 @@
-import { IsOptional, IsString } from "class-validator";
+import { IsOptional, IsString, IsUUID } from "class-validator";
 
 
 export class CreateCategoryDto{
@@ -6,5 +6,6 @@ export class CreateCategoryDto{
     name: string;
 
     @IsOptional()
+    @IsUUID()
     parentId?: string
 }
